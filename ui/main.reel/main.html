@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Main</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "main"}
+            }
+        },
+
+        "flow": {
+            "prototype": "montage/ui/flow.reel",
+            "properties": {
+                "element": {"#": "flow"},
+                "objects": [1, 2, 3, 4, 5],
+                "cameraFov": 40,
+                "paths": [{
+                    "knots": [
+                        {
+                            "knotPosition": [-600, 0, 0],
+                            "nextHandlerPosition": [-200, 0, 0],
+                            "previousDensity": 4,
+                            "nextDensity": 4
+                        },
+                        {
+                            "knotPosition": [600, 0, 0],
+                            "previousHandlerPosition": [200, 0, 0],
+                            "previousDensity": 4,
+                            "nextDensity": 4
+                        }
+                    ],
+                    "headOffset": 2,
+                    "tailOffset": 2,
+                    "units": {}
+                }]
+            }
+        },
+
+        "slide": {
+            "prototype": "montage/ui/dynamic-text.reel",
+            "properties": {
+                "element": {"#": "slide"}
+            },
+            "bindings": {
+                "value": {"<-": "@flow.objectAtCurrentIteration"}
+            }
+        }
+    }
+    </script>
+
+    <style>
+
+        .flow {
+            width: 600px;
+            height: 400px;
+            border: 1px solid #000;
+        }
+
+        .slide {
+            margin-left: -100px;
+            margin-top: -100px;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            background: #ddd;
+            font-size: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div data-montage-id="main" class="Main">
+        <div data-montage-id="flow" class="flow">
+            <div data-montage-id="slide" class="slide"></div>
+        </div>
+    </div>
+</body>
+</html>
