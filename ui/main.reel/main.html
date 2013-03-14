@@ -18,7 +18,7 @@
             "prototype": "montage/ui/flow.reel",
             "properties": {
                 "element": {"#": "flow"},
-                "objects": [1, 2, 3, 4, 5],
+                "content": [1, 2, 3, 4, 5],
                 "cameraFov": 40,
                 "paths": [{
                     "knots": [
@@ -48,7 +48,7 @@
                 "element": {"#": "slide"}
             },
             "bindings": {
-                "value": {"<-": "@flow.objectAtCurrentIteration"}
+                "value": {"<-": "@flow.contentAtCurrentIteration"}
             }
         }
     }
